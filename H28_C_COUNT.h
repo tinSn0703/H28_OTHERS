@@ -66,5 +66,9 @@ public:
 
 #include "H28_C_COUNT.cpp"
 
-typedef C_COUNT <uint> C_COUNT_UI;
-typedef C_COUNT <ulint> C_COUNT_UL;
+typedef C_COUNT <char>	C_COUNT_1;
+typedef C_COUNT <uchar>	C_COUNT_u1;
+typedef C_COUNT <sint>	C_COUNT_2;
+typedef C_COUNT <usint>	C_COUNT_u2;
+typedef C_COUNT <int>	C_COUNT_4;
+typedef C_COUNT <uint>	C_COUNT_u4;
