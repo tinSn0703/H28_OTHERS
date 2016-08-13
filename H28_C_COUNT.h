@@ -33,6 +33,8 @@ private:
 	
 	BOOL _mem_count_nf_loop :1;
 	
+	BOOL _mem_count_flag :1;
+	
 public:
 
 	C_COUNT <TEMP> () {}
@@ -43,12 +45,17 @@ public:
 	TEMP Ret_max();
 	TEMP Ret_min();
 	
+	BOOL Ret_flag();
+	
 	void Max();
 	void Min();
-
+	
 	bool Comp_max();
 	bool Comp_min();
-
+	
+	void Flag_up();
+	void Flag_down();
+	
 	C_COUNT <TEMP> & operator = (TEMP );
 
 	void operator ++ (int );

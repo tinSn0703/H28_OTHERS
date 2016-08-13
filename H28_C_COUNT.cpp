@@ -9,6 +9,8 @@ C_COUNT (TEMP _arg_count_max, TEMP _arg_count_min)
 	_mem_count_max = _arg_count_max;
 	_mem_count_min = _arg_count_min;
 	_mem_count_nf_loop = FALSE;
+	
+	_mem_count_flag = TRUE;
 }
 
 template <class TEMP>
@@ -19,6 +21,8 @@ C_COUNT (TEMP _arg_count_max, TEMP _arg_count_min, BOOL _arg_count_nf_loop)
 	_mem_count_max = _arg_count_max;
 	_mem_count_min = _arg_count_min;
 	_mem_count_nf_loop = _arg_count_nf_loop;
+	
+	_mem_count_flag = FALSE;
 }
 
 template <class TEMP>
@@ -43,6 +47,14 @@ C_COUNT <TEMP> ::
 Ret_min ()
 {
 	return _mem_count_min;
+}
+
+template <class TEMP>
+inline BOOL 
+C_COUNT <TEMP> :: 
+Ret_flag ()
+{
+	return _mem_count_flag;
 }
 
 template <class TEMP>
@@ -79,6 +91,22 @@ Comp_min ()
 	if (_mem_count > _mem_count_min)	return true;
 
 	return false;
+}
+
+template <class TEMP>
+inline void 
+C_COUNT <TEMP> :: 
+Flag_up ()
+{
+	_mem_count_flag = TRUE;
+}
+
+template <class TEMP>
+inline void
+C_COUNT <TEMP> ::
+Flag_down ()
+{
+	_mem_count_flag = FALSE;
 }
 
 template <class TEMP>
