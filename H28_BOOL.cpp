@@ -3,6 +3,12 @@
 
 #include "H28_BOOL.h"
 
+inline BOOL 
+operator ~ (BOOL _arg_bool)
+{
+	return (BOOL)((~(int)_arg_bool) & 1);
+}
+
 inline BOOL
 operator &
 (
@@ -38,14 +44,14 @@ template <class T>
 inline BOOL 
 TURN_TF (T _arg_turn_data )
 {
-	return (BOOL)((~_arg_turn_data) & 1);
+	return (BOOL)((~(int)_arg_turn_data) & 1);
 }
 
 template <class T>
 inline BOOL 
 CHECK_BIT_TF 
 (
-	uint _arg_check_data, 
+	int _arg_check_data, 
 	T _arg_check_bit 
 )
 {
@@ -56,7 +62,7 @@ template <class T>
 inline BOOL 
 CHECK_BIT_TF 
 (
-	uint _arg_check_data, 
+	int _arg_check_data, 
 	T _arg_check_bit_0, 
 	T _arg_check_bit_1 
 )
@@ -68,7 +74,7 @@ template <class T>
 inline BOOL 
 CHECK_TURN_BIT_TF 
 (
-	uint _arg_check_data, 
+	int _arg_check_data, 
 	T _arg_check_bit 
 )
 {

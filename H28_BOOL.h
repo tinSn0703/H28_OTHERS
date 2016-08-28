@@ -7,6 +7,8 @@ enum BOOL
 	FALSE = 0,
 };
 
+inline BOOL operator ~ (BOOL _arg_bool);
+
 inline BOOL operator & (BOOL _arg_bool_0, BOOL _arg_bool_1);
 
 inline BOOL operator | (BOOL _arg_bool_0, BOOL _arg_bool_1);
@@ -47,10 +49,10 @@ inline BOOL TURN_TF (T _arg_turn_data );
  *	1 -> TRUE
  */
 template <class T>
-inline BOOL CHECK_BIT_TF (uint _arg_check_data, T _arg_check_bit );
+inline BOOL CHECK_BIT_TF (int _arg_check_data, T _arg_check_bit );
 
 template <class T>
-inline BOOL CHECK_BIT_TF (uint _arg_check_data, T _arg_check_bit_0, T _arg_check_bit_1 );
+inline BOOL CHECK_BIT_TF (int _arg_check_data, T _arg_check_bit_0, T _arg_check_bit_1 );
 
 /**
  * \brief CHECK_BIT_TF‚Ì”½“]ver
@@ -63,6 +65,6 @@ inline BOOL CHECK_BIT_TF (uint _arg_check_data, T _arg_check_bit_0, T _arg_check
  *	1 -> TRUE
  */
 template <class T>
-inline BOOL CHECK_TURN_BIT_TF (uint _arg_check_data, T _arg_check_bit );
+inline BOOL CHECK_TURN_BIT_TF (int _arg_check_data, T _arg_check_bit );
 
 #include "H28_BOOL.cpp"
