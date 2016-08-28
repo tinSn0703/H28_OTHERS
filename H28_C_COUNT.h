@@ -84,4 +84,3 @@ typedef C_COUNT <sint>	C_COUNT_2;
 typedef C_COUNT <usint>	C_COUNT_u2;
 typedef C_COUNT <int>	C_COUNT_4;
 typedef C_COUNT <uint>	C_COUNT_u4;
-typedef C_COUNT <ullint> C_COUNT_ul;
