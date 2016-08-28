@@ -50,11 +50,16 @@ public:
 	void Max();
 	void Min();
 	
-	bool Comp_max();
-	bool Comp_min();
+	BOOL Comp(TEMP );
+		
+	BOOL Comp_max();
+	BOOL Comp_min();
 	
 	void Flag_up();
 	void Flag_down();
+	
+	void Count_up_flag();
+	void Count_down_flag();
 	
 	C_COUNT <TEMP> & operator = (TEMP );
 

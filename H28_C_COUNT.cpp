@@ -10,7 +10,7 @@ C_COUNT (TEMP _arg_count_max, TEMP _arg_count_min)
 	_mem_count_min = _arg_count_min;
 	_mem_count_nf_loop = FALSE;
 	
-	_mem_count_flag = TRUE;
+	_mem_count_flag = FALSE;
 }
 
 template <class TEMP>
@@ -74,23 +74,33 @@ Min ()
 }
 
 template <class TEMP>
-inline bool
-C_COUNT <TEMP> ::
-Comp_max ()
+inline BOOL 
+C_COUNT <TEMP> :: 
+Comp (TEMP _arg_num_comp)
 {
-	if (_mem_count < _mem_count_max)	return true;
-
-	return false;
+	if (_mem_count == _arg_num_comp)	return TRUE;
+	
+	return FALSE;
 }
 
 template <class TEMP>
-inline bool
+inline BOOL
+C_COUNT <TEMP> ::
+Comp_max ()
+{
+	if (_mem_count == _mem_count_max)	return TRUE;
+
+	return FALSE;
+}
+
+template <class TEMP>
+inline BOOL
 C_COUNT <TEMP> ::
 Comp_min ()
 {
-	if (_mem_count > _mem_count_min)	return true;
+	if (_mem_count == _mem_count_min)	return TRUE;
 
-	return false;
+	return FALSE;
 }
 
 template <class TEMP>
@@ -107,6 +117,38 @@ C_COUNT <TEMP> ::
 Flag_down ()
 {
 	_mem_count_flag = FALSE;
+}
+
+template <class TEMP>
+inline void 
+C_COUNT <TEMP> :: 
+Count_up_flag ()
+{
+	if (_mem_count_flag)
+	{
+		_mem_count ++;
+
+		if (_mem_count_max < _mem_count)
+		{
+			_mem_count = (_mem_count_nf_loop ? _mem_count_min : _mem_count_max);
+		}
+	}
+}
+
+template <class TEMP>
+inline void
+C_COUNT <TEMP> ::
+Count_down_flag ()
+{
+	if (_mem_count_flag)
+	{
+		_mem_count --;
+
+		if (_mem_count_min > _mem_count)
+		{
+			_mem_count = (_mem_count_nf_loop ? _mem_count_max : _mem_count_min);
+		}
+	}
 }
 
 template <class TEMP>
