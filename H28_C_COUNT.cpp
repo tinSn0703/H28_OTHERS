@@ -178,7 +178,7 @@ template <class TEMP>
 inline void
 C_COUNT <TEMP> ::
 operator -- (int _arg_count)
-{
+{	
 	_mem_count --;
 
 	if (_mem_count_min > _mem_count)

@@ -1,16 +1,56 @@
 
 #pragma once
 
+#include "H28_typedef.h"
+
 enum BOOL
 {
 	TRUE  = 1,
 	FALSE = 0,
 };
 
+/**
+ * \brief 
+ *	_arg_boolのTRUE,FALSEを反転させたものをreturnする。TRUN_TF()の演算子ver  
+ *
+ * \param _arg_bool : 元
+ * 
+ * \return BOOL : 反転後のもの
+ */
 inline BOOL operator ~ (BOOL _arg_bool);
 
+/**
+ * \brief 
+ *	BOOL用の論理積
+ *	
+ *	 0＼1 | TRUE  | FALSE
+ *		  |		  |
+ *	TRUE  |	TRUE  |	FALSE
+ *		  |		  |
+ *	FALSE |	FALSE |	FALSE
+ *
+ * \param _arg_bool_0 : 左辺
+ * \param _arg_bool_1 : 右辺
+ * 
+ * \return BOOL : 結果
+ */
 inline BOOL operator & (BOOL _arg_bool_0, BOOL _arg_bool_1);
 
+/**
+ * \brief 
+ *	BOOL用の論理和
+ *	
+ *	 0＼1 | TRUE  | FALSE
+ *		  |		  |
+ *	TRUE  |	TRUE  |	TRUE
+ *		  |		  |
+ *	FALSE |	TRUE  |	FALSE
+ *
+ * \param _arg_bool_0 : 左辺
+ * \param _arg_bool_1 : 右辺
+ * 
+ * \return BOOL : 結果
+ */
 inline BOOL operator | (BOOL _arg_bool_0, BOOL _arg_bool_1);
 
 /**
