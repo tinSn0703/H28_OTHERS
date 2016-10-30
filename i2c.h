@@ -6,7 +6,7 @@ inline void F_i2c_set();
 void F_i2c_out_start(usint );
 void F_i2c_in_start(usint );	//使わん
 void F_i2c_out(usint );
-usint F_i2c_in(char );
+usint F_i2c_in(BOOL );
 void F_i2c_stop();
 
 inline void 
@@ -51,15 +51,15 @@ F_i2c_out (usint _arg_data_out)
 }
 
 usint 
-F_i2c_in (char x)
+F_i2c_in (BOOL _arg_nf_ack)
 {
 	usint _ret = 0;
 	
-	if (x == 0)
+	if (_arg_nf_ack)
 	{
 		TWCR = ((1<<TWINT) | (1<<TWEN) | (1<<TWEA));	//受信開始
 	}
-	else if (x == 1)
+	else
 	{
 		TWCR = ((1<<TWINT) | (1<<TWEN));
 	}
