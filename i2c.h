@@ -2,15 +2,15 @@
 #ifndef _I2C_H_
 #define _I2C_H_ 1
 
-inline void F_i2c_set();
-void F_i2c_out_start(usint );
-void F_i2c_in_start(usint );	//使わん
-void F_i2c_out(usint );
-usint F_i2c_in(BOOL );
-void F_i2c_stop();
+inline void F_I2c_set();
+void F_I2c_out_start(usint );
+void F_I2c_in_start(usint );	//使わん
+void F_I2c_out(usint );
+usint F_I2c_in(BOOL );
+void F_I2c_stop();
 
 inline void 
-F_i2c_set ()
+F_I2c_set ()
 {
 	TWCR = 0x00;
 	TWBR = 0x0c;
@@ -20,7 +20,7 @@ F_i2c_set ()
 }
 
 void 
-F_i2c_out_start (usint _arg_set_addr)
+F_I2c_out_start (usint _arg_set_addr)
 {
 
 	TWCR = ((1<<TWINT) | (1<<TWSTA) | (1<<TWEN));	//開始条件
@@ -32,7 +32,7 @@ F_i2c_out_start (usint _arg_set_addr)
 }
 
 void 
-F_i2c_in_start (usint _arg_set_addr)
+F_I2c_in_start (usint _arg_set_addr)
 {
 	TWCR = ((1<<TWINT) | (1<<TWSTA) | (1<<TWEN));	//開始条件
 	while (!(TWCR & (1<<TWINT)));					//開始条件送信完了待機
@@ -43,7 +43,7 @@ F_i2c_in_start (usint _arg_set_addr)
 }
 
 void 
-F_i2c_out (usint _arg_data_out)
+F_I2c_out (usint _arg_data_out)
 {
 	TWDR = _arg_data_out;							//データセット
 	TWCR = ((1<<TWINT) | (1<<TWEN));	//TWINT解除
@@ -51,7 +51,7 @@ F_i2c_out (usint _arg_data_out)
 }
 
 usint 
-F_i2c_in (BOOL _arg_nf_ack)
+F_I2c_in (BOOL _arg_nf_ack)
 {
 	usint _ret = 0;
 	
@@ -72,7 +72,7 @@ F_i2c_in (BOOL _arg_nf_ack)
 }
 
 void 
-F_i2c_stop ()
+F_I2c_stop ()
 {
 	TWCR = ((1<<TWINT) | (1<<TWSTO) | (1<<TWEN));		//停止条件
 	_delay_ms(5);
