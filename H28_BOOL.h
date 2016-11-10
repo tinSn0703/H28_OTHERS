@@ -67,7 +67,8 @@ inline BOOL operator | (BOOL _arg_bool_0, BOOL _arg_bool_1);
  *	FALSE | FALSE | FALSE
  */
 template <class T>
-inline BOOL ADD_TF (T _arg_data_0, T _arg_data_1 );
+inline BOOL F_Func_and_bool (T _arg_data_0, T _arg_data_1 );
+
 /**
  * \brief _arg_turn_data‚ÌTF‚ğ”½“]‚³‚¹‚½‚à‚Ì‚ğreturn‚·‚éB
  * 
@@ -76,7 +77,7 @@ inline BOOL ADD_TF (T _arg_data_0, T _arg_data_1 );
  * \return BOOL	_arg_turn_data‚Ì”½“]‚ª•Ô‚³‚ê‚é
  */
 template <class T>
-inline BOOL TURN_TF (T _arg_turn_data );
+inline BOOL F_Turn_bool (T _arg_turn_data );
 
 /**
  * \brief _arg_check_data‚Ì_arg_check_bit‚ğTF‚É•ÏŠ·‚µ‚½‚à‚Ì‚ğreturn‚·‚éB
@@ -89,10 +90,10 @@ inline BOOL TURN_TF (T _arg_turn_data );
  *	1 -> TRUE
  */
 template <class T>
-inline BOOL CHECK_BIT_TF (int _arg_check_data, T _arg_check_bit );
+inline BOOL F_Check_bit_bool (int _arg_check_data, T _arg_check_bit );
 
 template <class T>
-inline BOOL CHECK_BIT_TF (int _arg_check_data, T _arg_check_bit_0, T _arg_check_bit_1 );
+inline BOOL F_Check_bit_bool (int _arg_check_data, T _arg_check_bit_0, T _arg_check_bit_1 );
 
 /**
  * \brief CHECK_BIT_TF‚Ì”½“]ver
@@ -105,6 +106,6 @@ inline BOOL CHECK_BIT_TF (int _arg_check_data, T _arg_check_bit_0, T _arg_check_
  *	1 -> TRUE
  */
 template <class T>
-inline BOOL CHECK_TURN_BIT_TF (int _arg_check_data, T _arg_check_bit );
+inline BOOL F_Check_turn_bit_bool (int _arg_check_data, T _arg_check_bit );
 
 #include "H28_BOOL.cpp"

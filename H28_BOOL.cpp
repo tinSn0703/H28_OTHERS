@@ -1,8 +1,6 @@
 ﻿
 #pragma once
 
-#include "H28_BOOL.h"
-
 inline BOOL
 operator ~ (BOOL _arg_bool)
 {
@@ -31,7 +29,7 @@ operator |
 
 template <class T>
 inline BOOL
-ADD_TF
+F_Func_and_bool
 (
 	T _arg_data_0,
 	T _arg_data_1
@@ -42,14 +40,14 @@ ADD_TF
 
 template <class T>
 inline BOOL
-TURN_TF (T _arg_turn_data )
+F_Turn_bool (T _arg_turn_data )
 {
 	return (BOOL)((~(int)_arg_turn_data) & 1);
 }
 
 template <class T>
 inline BOOL
-CHECK_BIT_TF
+F_Check_bit_bool
 (
 	int _arg_check_data,
 	T _arg_check_bit
@@ -60,7 +58,7 @@ CHECK_BIT_TF
 
 template <class T>
 inline BOOL
-CHECK_BIT_TF
+F_Check_bit_bool
 (
 	int _arg_check_data,
 	T _arg_check_bit_0,
@@ -72,11 +70,11 @@ CHECK_BIT_TF
 
 template <class T>
 inline BOOL
-CHECK_TURN_BIT_TF
+F_Check_turn_bit_bool
 (
 	int _arg_check_data,
 	T _arg_check_bit
 )
 {
-	return TURN_TF(_arg_check_data >> _arg_check_bit);
+	return F_Turn_bool(_arg_check_data >> _arg_check_bit);
 }
